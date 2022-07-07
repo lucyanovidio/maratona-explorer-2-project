@@ -1,0 +1,212 @@
+:root {
+  --primary-color: #036803;
+  
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  /* se eu tivesse definido uma cor pro hover, teria q fazer tbm uma variável pra ela */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ======== THEMES ======== */
+
+body.dark-green {
+  --bg-color: black;
+  --text-color: white;
+}
+
+/* body.pink {
+  --primary-color: #ee51a7;
+} */
+
+/* body.dark-pink {
+  --bg-color: black;
+  --text-color: white;
+  --primary-color: #ee51a7;
+} */
+
+/* ======== ======== */
+
+body {
+  height: calc(100vh - 40px);
+  background-color: var(--bg-color);
+
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+}
+
+main {
+  max-width: 300px;
+
+  margin-inline: auto;
+  margin-top: 40px;
+
+  text-align: center;
+}
+
+/*qnd meche com as dimensões da vp a borda muda de posição, então desisti*/
+/* header .img-border {
+  width: 117px;
+  height: 110px;
+
+  padding: 57px;
+
+  border: 4px solid var(--primary-color);
+  border-radius: 60%;
+
+  position: fixed;
+  z-index: 100;
+
+  transform: translateX(493.7%) translateY(75%); 
+} */
+
+/*n consegui descobrir pq o before tava empurrando a imagem pra baixo se tava com z index -1*/
+/* img::before {
+  content: '';
+  width: 100%;
+  height: 100px;
+  background-color: var(--primary-color);
+
+  position: absolute;
+} */
+
+img {
+  width: 105px;
+  /*eu botei só o width e a altura ficou igual*/
+
+  border-radius: 50%;
+  /*E É ASSIM QUE ELE FAZ A BORDA AMADO*/
+  border: 4px solid var(--primary-color);
+  padding: 3.7px;
+
+  /* z-index: -100; */
+
+  transition: 400ms;
+}
+
+img:hover {
+  width: 120px;
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 38px;
+
+  margin: 24px 0 8px;
+
+  transition: 400ms;
+}
+
+header p {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 18px;
+
+  opacity: 0.8;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+
+ul li {
+  list-style: none;
+}
+
+ul li a {
+  display: inline-flex;
+  /* Sendo block eu nem preciso dizer q ele vai ocupar 100% do width, pq o block já ocupa o width todo, e é exatamente assim q ele faz as coisas pularem pra baixo. E lembrando q eu inicialmente coloquei inline-block pra ele pegar o width e o height. Sendo block ele pega o height e o width, mas n precisa por o width já q eu quero q ele ocupe a linha toda da caixa. 
+  MASSS eu precisei por inline-flex pq, com o flex ele pega a questão do block de pegar o width, q eu coloquei inclusive com 90%, mudando pra 100% no hover, mas como ele n ficava no centro com o hover, eu pus o flex pra centralizar */
+  align-items: center;
+  justify-content: center;
+
+  width: 90%;
+  height: 53px;
+  padding: 16px;
+  background-color: var(--primary-color);
+
+  border-radius: 6px;
+
+  text-decoration: none;
+  color: white;
+
+  transition: 400ms;
+}
+
+ul li a:hover {
+  width: 100%;
+  height: 60px;
+  filter: brightness(1.5);
+  cursor: pointer;
+}
+
+/* === THEME BUTTONS === */
+
+.themes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  margin-bottom: 15px;
+}
+
+.themes #light-sun{
+  display: none;
+}
+
+.themes #dark-moon {
+  margin-bottom: 10px;
+
+  transition: 400ms;
+}
+
+.themes #dark-moon:hover {
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+}
+
+body.dark-green #dark-moon {
+  display: none;
+}
+
+body.dark-green .themes #light-sun {
+  display: initial;
+  margin-bottom: 10px;
+
+  transition: 400ms;
+}
+
+body.dark-green .themes #light-sun:hover {
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+}
+
+/* ====== ====== */
+
+footer {
+  font-size: 12px;
+  line-height: 16px;
+
+  opacity: 0.6;
+  transition: opacity 400ms;
+
+  color: var(--text-color);
+}
+
+footer:hover {
+  opacity: 1;
+}
