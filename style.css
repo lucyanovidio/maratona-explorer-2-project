@@ -1,9 +1,7 @@
 :root {
   --primary-color: #036803;
-  
   --bg-color: #ffffff;
   --text-color: #000000;
-  /* se eu tivesse definido uma cor pro hover, teria q fazer tbm uma variável pra ela */
 }
 
 * {
@@ -12,24 +10,10 @@
   box-sizing: border-box;
 }
 
-/* ======== THEMES ======== */
-
 body.dark-green {
   --bg-color: black;
   --text-color: white;
 }
-
-/* body.pink {
-  --primary-color: #ee51a7;
-} */
-
-/* body.dark-pink {
-  --bg-color: black;
-  --text-color: white;
-  --primary-color: #ee51a7;
-} */
-
-/* ======== ======== */
 
 body {
   height: calc(100vh - 40px);
@@ -48,42 +32,12 @@ main {
   text-align: center;
 }
 
-/*qnd meche com as dimensões da vp a borda muda de posição, então desisti*/
-/* header .img-border {
-  width: 117px;
-  height: 110px;
-
-  padding: 57px;
-
-  border: 4px solid var(--primary-color);
-  border-radius: 60%;
-
-  position: fixed;
-  z-index: 100;
-
-  transform: translateX(493.7%) translateY(75%); 
-} */
-
-/*n consegui descobrir pq o before tava empurrando a imagem pra baixo se tava com z index -1*/
-/* img::before {
-  content: '';
-  width: 100%;
-  height: 100px;
-  background-color: var(--primary-color);
-
-  position: absolute;
-} */
-
 img {
   width: 105px;
-  /*eu botei só o width e a altura ficou igual*/
 
   border-radius: 50%;
-  /*E É ASSIM QUE ELE FAZ A BORDA AMADO*/
   border: 4px solid var(--primary-color);
   padding: 3.7px;
-
-  /* z-index: -100; */
 
   transition: 400ms;
 }
@@ -124,8 +78,6 @@ ul li {
 
 ul li a {
   display: inline-flex;
-  /* Sendo block eu nem preciso dizer q ele vai ocupar 100% do width, pq o block já ocupa o width todo, e é exatamente assim q ele faz as coisas pularem pra baixo. E lembrando q eu inicialmente coloquei inline-block pra ele pegar o width e o height. Sendo block ele pega o height e o width, mas n precisa por o width já q eu quero q ele ocupe a linha toda da caixa. 
-  MASSS eu precisei por inline-flex pq, com o flex ele pega a questão do block de pegar o width, q eu coloquei inclusive com 90%, mudando pra 100% no hover, mas como ele n ficava no centro com o hover, eu pus o flex pra centralizar */
   align-items: center;
   justify-content: center;
 
